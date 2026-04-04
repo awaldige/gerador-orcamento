@@ -12,9 +12,10 @@ O projeto foi criado com foco em simplicidade, usabilidade e geração rápida d
 ---
 
 ## 🖼️ Demonstração Visual
-![IMG_1279](https://github.com/user-attachments/assets/e1a89ef3-8d02-462f-9b9f-7293c941caab)
-![IMG_1280](https://github.com/user-attachments/assets/36ea4644-b835-4e37-8c6d-49b914290bfd)
-![IMG_1281](https://github.com/user-attachments/assets/6e5d09fb-e894-4682-bf39-0d6d22da5d1d)
+![Captura de tela 2026-04-04 150345](https://github.com/user-attachments/assets/97b603a8-76e7-4725-a779-566f6a577d9a)
+![Captura de tela 2026-04-04 151023](https://github.com/user-attachments/assets/d8f585d6-a795-4789-a1a8-a65583f274a9)
+![Captura de tela 2026-04-04 151045](https://github.com/user-attachments/assets/b441637c-cc93-4d07-b3b2-472528c83330)
+
 
 ---
 
