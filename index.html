@@ -1,38 +1,321 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerador de Orçamento</title>
-  
+  <meta name="description" content="Crie orçamentos de produtos e serviços de forma simples e gere documentos PDF profissionais.">
+  <meta name="theme-color" content="#F1F5F9">
+
+  <title>Gerador de Orçamento | AW TECHNOLOGY</title>
+
   <link rel="icon" type="image/jpeg" href="gerador de orçamento.jpg">
-  
   <link rel="stylesheet" href="style.css">
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Gerador de Orçamento</h1>
+  <div class="app-container">
 
-    <label for="cliente">Cliente:</label>
-    <input type="text" id="cliente" placeholder="Nome do cliente">
+    <!-- CABEÇALHO -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <path d="M14 2v6h6"/>
+            <path d="M8 13h8"/>
+            <path d="M8 17h8"/>
+            <path d="M8 9h2"/>
+          </svg>
+        </div>
 
-    <div id="itens-container">
-      <div class="item">
-        <input type="text" class="produto" placeholder="Produto/Serviço">
-        <input type="number" class="quantidade" placeholder="Qtd" min="1" value="1">
-        <input type="number" class="valorUnitario" placeholder="Valor Unitário" min="0" step="0.01">
+        <div class="brand-info">
+          <h1>Gerador de Orçamento</h1>
+          <span>Organize seus serviços e propostas</span>
+        </div>
       </div>
-    </div>
 
-    <button id="adicionar-item">+ Adicionar Item</button>
+      <div class="topbar-right">
+        <span class="demo-badge">
+          <span class="status-dot"></span>
+          Projeto demonstrativo
+        </span>
+      </div>
+    </header>
 
-    <label for="observacoes">Observações:</label>
-    <textarea id="observacoes" placeholder="Digite observações adicionais..."></textarea>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
 
-    <button id="gerar-pdf">Gerar PDF</button>
+      <section class="welcome-section">
+        <div class="welcome-text">
+          <span class="section-eyebrow">GESTÃO SIMPLIFICADA</span>
+          <h2>Crie seu orçamento</h2>
+          <p>
+            Adicione produtos ou serviços, confira os valores
+            e gere um documento pronto para compartilhar.
+          </p>
+        </div>
+
+        <div class="welcome-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 2v4"/>
+            <path d="M16 2v4"/>
+            <rect width="18" height="18" x="3" y="4" rx="2"/>
+            <path d="M3 10h18"/>
+            <path d="M8 14h.01"/>
+            <path d="M12 14h.01"/>
+            <path d="M16 14h.01"/>
+            <path d="M8 18h.01"/>
+            <path d="M12 18h.01"/>
+          </svg>
+        </div>
+      </section>
+
+      <!-- INDICADORES INFORMATIVOS -->
+      <section class="info-cards">
+
+        <article class="info-card">
+          <div class="info-card-icon green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <path d="M14 2v6h6"/>
+              <path d="M8 13h8"/>
+              <path d="M8 17h5"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Orçamento organizado</strong>
+            <span>Todos os itens em um só lugar</span>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <div class="info-card-icon blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Cálculo de valores</strong>
+            <span>Confira o total do orçamento</span>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <div class="info-card-icon orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <path d="m7 10 5 5 5-5"/>
+              <path d="M12 15V3"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Documento em PDF</strong>
+            <span>Pronto para compartilhar</span>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ÁREA DE CRIAÇÃO -->
+      <div class="workspace">
+
+        <section class="form-panel">
+
+          <div class="panel-heading">
+            <div>
+              <span class="section-eyebrow">NOVO DOCUMENTO</span>
+              <h3>Dados do orçamento</h3>
+              <p>Preencha as informações para montar sua proposta.</p>
+            </div>
+            <span class="step-number">01</span>
+          </div>
+
+          <!-- CLIENTE -->
+          <div class="form-section">
+            <div class="subsection-heading">
+              <span class="subsection-icon">01</span>
+              <h4>Informações do cliente</h4>
+            </div>
+
+            <div class="form-group">
+              <label for="cliente">Nome do cliente</label>
+              <input
+                type="text"
+                id="cliente"
+                placeholder="Digite o nome do cliente"
+                autocomplete="name"
+              >
+            </div>
+          </div>
+
+          <!-- ITENS -->
+          <div class="form-section">
+            <div class="subsection-heading">
+              <span class="subsection-icon">02</span>
+              <h4>Produtos e serviços</h4>
+            </div>
+
+            <div class="items-header">
+              <span>Descrição do item</span>
+              <span>Quantidade</span>
+              <span>Valor unitário</span>
+            </div>
+
+            <div id="itens-container">
+              <div class="item">
+                <input
+                  type="text"
+                  class="produto"
+                  placeholder="Produto ou serviço"
+                  aria-label="Produto ou serviço"
+                >
+
+                <input
+                  type="number"
+                  class="quantidade"
+                  placeholder="Qtd."
+                  min="1"
+                  step="1"
+                  value="1"
+                  aria-label="Quantidade"
+                >
+
+                <input
+                  type="number"
+                  class="valorUnitario"
+                  placeholder="0,00"
+                  min="0"
+                  step="0.01"
+                  aria-label="Valor unitário"
+                >
+              </div>
+            </div>
+
+            <button type="button" id="adicionar-item" class="add-item-button">
+              <span>+</span>
+              Adicionar outro item
+            </button>
+          </div>
+
+          <!-- OBSERVAÇÕES -->
+          <div class="form-section">
+            <div class="subsection-heading">
+              <span class="subsection-icon">03</span>
+              <h4>Observações adicionais</h4>
+            </div>
+
+            <div class="form-group">
+              <label for="observacoes">Informações complementares</label>
+              <textarea
+                id="observacoes"
+                placeholder="Adicione condições, prazos ou outras informações importantes..."
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- AÇÕES -->
+          <div class="form-actions">
+
+            <button type="button" id="gerar-pdf" class="generate-button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <path d="M14 2v6h6"/>
+                <path d="M8 13h8"/>
+                <path d="M8 17h8"/>
+              </svg>
+              Gerar orçamento em PDF
+            </button>
+
+            <button type="button" id="salvar-orcamento" class="save-button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                <path d="M17 21v-8H7v8"/>
+                <path d="M7 3v5h8"/>
+              </svg>
+              Salvar orçamento
+            </button>
+
+            <span class="secure-note">
+              Os dados são armazenados localmente neste navegador.
+            </span>
+
+          </div>
+        </section>
+
+        <!-- RESUMO -->
+        <aside class="summary-panel">
+
+          <div class="summary-heading">
+            <div>
+              <span class="section-eyebrow">VISÃO GERAL</span>
+              <h3>Resumo</h3>
+            </div>
+
+            <div class="summary-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 2v4"/>
+                <path d="M16 2v4"/>
+                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                <path d="M3 10h18"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="summary-content">
+            <div class="summary-line">
+              <span>Cliente</span>
+              <strong id="resumo-cliente">Não informado</strong>
+            </div>
+
+            <div class="summary-line">
+              <span>Quantidade de itens</span>
+              <strong id="quantidade-itens">1</strong>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="total-area">
+              <span>Valor total do orçamento</span>
+              <strong id="total-geral">R$ 0,00</strong>
+            </div>
+          </div>
+
+          <div class="summary-tip">
+            <span class="tip-icon">i</span>
+            <p>
+              Confira os dados e os valores antes de gerar ou salvar seu orçamento.
+            </p>
+          </div>
+
+          <div class="summary-footer">
+            <span class="footer-check">✓</span>
+            <span>Simples, organizado e prático.</span>
+          </div>
+
+        </aside>
+      </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="app-footer">
+      <span>Gerador de Orçamento</span>
+      <span>Desenvolvido por <strong>AW TECHNOLOGY</strong></span>
+    </footer>
+
   </div>
 
   <script src="script.js"></script>
