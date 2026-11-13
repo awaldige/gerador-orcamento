@@ -1,101 +1,131 @@
-# 📄 Gerador de Orçamento Online
+# 📄 Gerador de Orçamento | AW TECHNOLOGY
 
-Aplicação web para **criação e geração de orçamentos em PDF diretamente no navegador**, desenvolvida com **HTML, CSS e JavaScript**, utilizando a biblioteca **jsPDF**.
+Aplicação web demonstrativa para **criação e gerenciamento de orçamentos comerciais**, com cálculo automático de valores, armazenamento de registros no navegador e geração de propostas comerciais em PDF.
 
-O projeto foi criado com foco em simplicidade, usabilidade e geração rápida de documentos para pequenos negócios e profissionais autônomos, sendo ideal para demonstração em portfólio.
+Desenvolvido com **HTML5, CSS3 e JavaScript**, utilizando a biblioteca **jsPDF** e o plugin **AutoTable** para geração de documentos.
+
+O projeto demonstra como uma ferramenta digital pode simplificar a elaboração de orçamentos, organizar serviços e apresentar propostas comerciais de maneira prática e profissional.
 
 ---
 
-## 🌐 Demonstração
+## 🌐 Demonstração Online
+
 🔗 https://gerador-orcamento-two.vercel.app/
 
 ---
 
 ## 🖼️ Demonstração Visual
-![Captura de tela 2026-04-04 150345](https://github.com/user-attachments/assets/97b603a8-76e7-4725-a779-566f6a577d9a)
-![Captura de tela 2026-04-04 151023](https://github.com/user-attachments/assets/d8f585d6-a795-4789-a1a8-a65583f274a9)
-![Captura de tela 2026-04-04 151045](https://github.com/user-attachments/assets/b441637c-cc93-4d07-b3b2-472528c83330)
+
+<img width="1345" height="766" alt="gerador-orcamento" src="https://github.com/user-attachments/assets/5df7bf52-e1cc-4b82-a470-6ed7d37755b6" />
 
 
 ---
 
 ## 🚀 Funcionalidades
 
-- ✅ Adição de múltiplos itens de orçamento
-- 📦 Produtos ou serviços com quantidade e valor unitário
-- 🧮 Cálculo automático do valor total
-- 📝 Campo de observações adicionais
-- 📄 Geração de orçamento em PDF
-- 📱 Layout responsivo
-- ⚡ Execução totalmente no navegador (sem backend)
+- ✅ Cadastro de cliente para elaboração do orçamento.
+- ✅ Adição de múltiplos produtos e serviços.
+- ✅ Definição de quantidades e valores unitários.
+- ✅ Cálculo automático de subtotais e valor total.
+- ✅ Campo para observações adicionais.
+- ✅ Geração de propostas comerciais em PDF.
+- ✅ Salvamento de orçamentos no navegador.
+- ✅ Histórico de orçamentos salvos.
+- ✅ Consulta e abertura de orçamentos registrados.
+- ✅ Exclusão de orçamentos do histórico.
+- ✅ Limite de até 50 registros armazenados localmente.
+- ✅ Interface responsiva e adaptada a diferentes dispositivos.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-| Tecnologia | Função |
-|------------|--------|
+| Tecnologia | Aplicação |
+|---|---|
 | HTML5 | Estrutura da aplicação |
-| CSS3 | Estilo e responsividade |
-| JavaScript (Vanilla) | Lógica do orçamento |
-| jsPDF | Geração do PDF no navegador |
+| CSS3 | Identidade visual, layout e responsividade |
+| JavaScript (Vanilla) | Lógica, cálculos e gerenciamento dos orçamentos |
+| jsPDF | Geração de documentos PDF |
+| jsPDF-AutoTable | Criação de tabelas nos documentos PDF |
+| LocalStorage | Armazenamento local dos orçamentos |
+
+---
+
+## 💾 Armazenamento dos Dados
+
+O projeto utiliza o **LocalStorage** do navegador para armazenar os orçamentos cadastrados.
+
+Isso permite:
+
+- Salvar registros sem necessidade de servidor.
+- Consultar os orçamentos posteriormente.
+- Abrir registros para visualizar seus dados.
+- Excluir registros armazenados.
+
+**Importante:** os dados permanecem no navegador e dispositivo utilizados. Não existe sincronização entre dispositivos ou armazenamento em servidor.
+
+A limpeza dos dados do navegador pode apagar os registros salvos.
 
 ---
 
 ## 📂 Estrutura do Projeto
 
-orcamento-online/
+```text
+gerador-orcamento/
 │
-├── index.html # Interface da aplicação
-├── style.css # Estilos e layout
-├── script.js # Lógica de cálculo e geração do PDF
-└── README.md # Documentação do projeto
-
+├── index.html       # Estrutura da aplicação
+├── style.css        # Estilos e identidade visual
+├── script.js        # Lógica, cálculos e funcionalidades
+└── README.md        # Documentação do projeto
+```
 
 ---
 
-## ▶️ Como Usar
+## ▶️ Como Executar Localmente
 
-1. Clone o repositório:
+### 1. Clone o repositório
 
 ```bash
 git clone https://github.com/awaldige/gerador-orcamento.git
-Abra o arquivo index.html em um navegador moderno.
+```
 
-Preencha:
+### 2. Acesse a pasta
 
-Nome do cliente
+```bash
+cd gerador-orcamento
+```
 
-Itens do orçamento
+### 3. Execute a aplicação
 
-Observações (opcional)
+Abra o arquivo `index.html` em um navegador moderno.
 
-Clique em Adicionar Item para incluir novos produtos/serviços.
+Também é possível utilizar a extensão Live Server do Visual Studio Code.
 
-Clique em Gerar PDF para baixar o orçamento.
+**Observação:** é necessária conexão com a internet para carregar as bibliotecas jsPDF e jsPDF-AutoTable disponibilizadas por CDN.
 
-📌 Observações
-O projeto funciona totalmente no navegador.
+---
 
-Não utiliza backend ou banco de dados.
+## 📌 Características e Limitações
 
-Não inclui imagens no PDF para evitar problemas de CORS.
+- Aplicação demonstrativa desenvolvida para estudo e portfólio.
+- Não utiliza backend ou banco de dados.
+- Não possui autenticação de usuários.
+- Os registros são armazenados localmente no navegador.
+- Não realiza pagamentos ou emissão de documentos fiscais.
+- A geração de PDF é executada diretamente no navegador.
 
-Requer navegador moderno com suporte a JavaScript.
+---
 
-🔮 Melhorias Futuras
-Cadastro de clientes
+## 👨‍💻 Autor
 
-Logo da empresa no orçamento
+**André Waldige — AW TECHNOLOGY**
 
-Salvamento de orçamentos
+Desenvolvedor de soluções digitais, sistemas web e ferramentas personalizadas.
 
-Histórico de documentos
-
-Integração com backend/API
-
-👨‍💻 Autor
-Desenvolvido por André Waldige
 🔗 GitHub: https://github.com/awaldige
 
-⭐ Projeto desenvolvido para estudo e portfólio.
+🌐 Portfólio: https://andre-waldige.vercel.app/
+
+---
+
+⭐ Projeto desenvolvido para estudo, demonstração de funcionalidades e apresentação de soluções digitais no portfólio AW TECHNOLOGY.
